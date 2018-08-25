@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script type="text/javascript" src="../assets/js/vue.js"></script>
+    <title>v-bind</title>
+</head>
+<body>
+    <h1>v-bind</h1>
+    <hr>
+    <div id="app">
+        <img v-bind:src="imgSrc" width="200px">
+        <a v-bind:href="url">v-bind绑定方式一</a>
+        <a :href="url">v-bind绑定方式二</a>
+        	
+        <div :class="className">1、绑定classA</div>
+        <div :class="{classA:isOk}">2、绑定class中的判断</div>
+        <div :class="[classA,classB]">3、绑定class中的数组</div>
+        <div :class="isOk?classA:classB">4、绑定class中的三元表达式判断</div>
+        <div :style="{color:red,fontSize:font}">5、绑定style</div>
+        <div :style="styleObject">6、用对象绑定style样式</div>
+    </div>
+ 
+    <script type="text/javascript">
+        var app=new Vue({
+            el:'#app',
+            data:{
+                imgSrc:'',
+                url:'https:www.baidu.com',
+                styleObject:{
+                    fontSize:'24px',
+                    color:'green'
+                        }
+                    }
+            }
+        })
+    </script>
+</body>
+</html>

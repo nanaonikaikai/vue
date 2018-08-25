@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <script type="text/javascript" src="../assets/js/vue.js"></script>
+    <title>component-1</title>
+</head>
+
+<body>
+    <h1>component-1</h1>
+    <hr>
+    <div id="app">
+        <kaikai></kaikai>
+        <kaikai2></kaikai2>
+    </div>
+
+    <script type="text/javascript">
+        Vue.component('kaikai', {
+            template: '<div styel="color: red ;">全局化注册的kaikai标签</div>'
+        })
+        var app = new Vue({
+            el: '#app',
+            data: {
+                message: 'hello Vue!'
+            },
+            components: {
+                "kaikai2": {
+                    template: '<div style="color:green;">局部注册的kaiai2标签</div>'
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>
